@@ -12,7 +12,7 @@ DEBUG = True
 PORT = 8000
 
 # Initialize an instance of the Flask class.
-# This starts the website!
+# This starts the website! Restored
 app = Flask(__name__)
 
 app.secret_key = "asdfasdfasdfasdfasdfasdf"
