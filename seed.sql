@@ -1,2 +1,2 @@
 DELETE FROM meal;
-INSERT INTO meal (name, owner, breed, created_at) VALUES ('Fido', 'James', 'Mutt', datetime('now'));
+INSERT INTO meal (id, meal, price, restaurant, image created_at) VALUES (00, 'mealname', 23,'restaurant','image', datetime('now'));

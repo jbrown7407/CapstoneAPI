@@ -5,17 +5,22 @@ from flask_login import UserMixin
 DATABASE = SqliteDatabase('meals.sqlite')
 
 class User(UserMixin, Model):
+    id = CharField(unique=True)
     username = CharField(unique=True)
     email = CharField(unique=True)
     password = CharField()
+    favorites = CharField()
+    #favorites needs to be an array
 
     class Meta:
         database = DATABASE
-
+#issue here with number field??
 class Meal(Model):
-    name = CharField()
-    owner = CharField()
-    breed = CharField()
+    id = CharField()
+    meal = CharField()
+    price = CharField()
+    restaurant = CharField()
+    image = CharField()
     created_at = DateTimeField(default=datetime.datetime.now)
 
     class Meta:
