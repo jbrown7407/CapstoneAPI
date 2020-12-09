@@ -24,7 +24,7 @@ def create_meals():
     print(body)
     new_meal = models.Meal.create(**body)
     # same exact thing as:
-    # new_meal = models.meal.create(name=body['name'], owner=body['owner'], breed=body['breed'])
+    # new_meal = models.meal.create(id=body['id'], meal=body['meal'], restlink=body['restlink'], pic=body['pic'])
     meal_data = model_to_dict(new_meal)
     return jsonify(data=meal_data, status={'code': 200, 'message': 'Success'})
 

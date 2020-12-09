@@ -2,7 +2,8 @@ import datetime
 from peewee import *
 from flask_login import UserMixin
 
-DATABASE = SqliteDatabase('meals.sqlite')
+DATABASE = PostgresqlDatabase('meals')
+#acccessingg correct DB?
 
 class User(UserMixin, Model):
     id = CharField(unique=True)
@@ -16,12 +17,12 @@ class User(UserMixin, Model):
         database = DATABASE
 #issue here with number field??
 class Meal(Model):
-    id = CharField()
+    id= CharField()
     meal = CharField()
-    price = CharField()
-    restaurant = CharField()
-    image = CharField()
-    created_at = DateTimeField(default=datetime.datetime.now)
+    restlink = CharField()
+    pic = CharField()
+    
+    # created_at = DateTimeField(default=datetime.datetime.now)
 
     class Meta:
         database = DATABASE
